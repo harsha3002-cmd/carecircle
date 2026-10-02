@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CareCircle coordinates eldercare through WhatsApp, voice calls and trusted local support—without another app for parents." />
+  <title>CareCircle — Stay close, even from afar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230F766E'/%3E%3Cpath d='M32 50S13 40 13 24c0-10 12-14 19-5 7-9 19-5 19 5 0 16-19 26-19 26Z' fill='white'/%3E%3Cpath d='M32 21v19M23 31h18' stroke='%230F766E' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+          colors: { care: { 50:'#ecfdf8',100:'#d1faed',600:'#0F766E',700:'#0b5f59',900:'#123d3a' }, indigoCare:'#4338CA' },
+          boxShadow: { soft:'0 20px 60px -28px rgba(15,118,110,.28)', card:'0 12px 40px -24px rgba(15,23,42,.20)' }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :focus-visible{outline:3px solid #99f6e4;outline-offset:3px}
+    .dot-grid{background-image:radial-gradient(rgba(15,118,110,.13) 1px,transparent 1px);background-size:20px 20px}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
+      <a href="#top" class="flex items-center gap-2.5" aria-label="CareCircle home">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-care-600 text-white shadow-soft"><i data-lucide="heart-pulse" class="h-5 w-5"></i></span>
+        <span class="text-xl font-extrabold tracking-tight text-slate-950">Care<span class="text-care-600">Circle</span></span>
+      </a>
+      <div class="hidden items-center gap-7 text-sm font-semibold text-slate-600 lg:flex">
+        <a class="transition hover:text-care-600" href="#reality">The Reality</a><a class="transition hover:text-care-600" href="#how">How It Works</a><a class="transition hover:text-care-600" href="#compare">WhatsApp vs CareCircle</a><a class="transition hover:text-care-600" href="#pricing">Pricing</a><a class="transition hover:text-care-600" href="#faq">FAQ</a>
+      </div>
+      <a href="#waitlist" class="hidden rounded-xl bg-care-600 px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-care-700 lg:inline-flex">Join 50-Family Beta</a>
+      <button id="menuBtn" class="rounded-lg p-2 text-slate-700 lg:hidden" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-5 py-4 lg:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700"><a href="#reality">The Reality</a><a href="#how">How It Works</a><a href="#compare">WhatsApp vs CareCircle</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#waitlist" class="rounded-xl bg-care-600 px-4 py-3 text-center text-white">Join 50-Family Beta</a></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden bg-gradient-to-b from-care-50/70 via-white to-white">
+      <div class="absolute inset-y-0 right-0 -z-0 w-1/2 dot-grid [mask-image:linear-gradient(to_left,black,transparent)]"></div>
+      <div class="relative mx-auto grid max-w-7xl gap-14 px-5 pb-24 pt-16 lg:grid-cols-[1.06fr_.94fr] lg:px-8 lg:pb-32 lg:pt-24">
+        <div class="max-w-3xl">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-care-600/20 bg-white px-4 py-2 text-sm font-bold text-care-700 shadow-sm"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> Built for Indian families living apart</div>
+          <h1 class="text-4xl font-extrabold leading-[1.08] tracking-[-.04em] text-slate-950 sm:text-5xl lg:text-6xl">The hardest part of living apart isn’t distance. <span class="text-care-600">It’s the silence between WhatsApp calls.</span></h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">When a morning call goes unanswered—or a medicine reminder is missed—the panic begins. CareCircle coordinates daily check-ins, medication routines, domestic helpers and trusted local contacts through familiar channels.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="#waitlist" class="inline-flex items-center justify-center gap-2 rounded-xl bg-care-600 px-6 py-4 font-bold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-care-700">Apply for Early Access Beta <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+            <a href="#escalation" class="inline-flex items-center justify-center rounded-xl px-6 py-4 font-bold text-slate-700 transition hover:bg-slate-100">See the 3-tier escalation</a>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
+            <span class="flex items-center gap-2"><i data-lucide="smartphone-off" class="h-4 w-4 text-care-600"></i>Zero app downloads for parents</span>
+            <span class="flex items-center gap-2"><i data-lucide="languages" class="h-4 w-4 text-care-600"></i>Multilingual voice notes</span>
+            <span class="flex items-center gap-2"><i data-lucide="shield-check" class="h-4 w-4 text-care-600"></i>DPDPA-aligned consent</span>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-lg lg:mt-4">
+          <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-care-100 to-indigo-100 blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-soft sm:p-7">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-5"><div class="flex items-center gap-3"><span class="grid h-11 w-11 place-items-center rounded-full bg-amber-100 text-amber-700"><i data-lucide="sun" class="h-5 w-5"></i></span><div><p class="font-bold text-slate-950">Morning Circle</p><p class="text-sm text-slate-500">Today, 8:00 AM</p></div></div><span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">On track</span></div>
+            <div class="space-y-4 py-6">
+              <div class="mr-10 rounded-2xl rounded-tl-sm bg-slate-100 p-4 text-sm leading-6 text-slate-700"><strong>Good morning, Papa.</strong><br>Hope your walk was lovely. Tap once when you’re back home.</div>
+              <div class="ml-14 flex items-center justify-between rounded-2xl rounded-tr-sm bg-care-600 p-4 text-sm font-semibold text-white"><span>All good · Morning medicine taken</span><i data-lucide="check-check" class="h-4 w-4"></i></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><div class="mb-3 flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-full bg-indigo-50 text-indigoCare"><i data-lucide="audio-lines" class="h-4 w-4"></i></span><div><p class="text-sm font-bold text-slate-900">Sunita · Voice update</p><p class="text-xs text-slate-500">Hindi · Translated automatically</p></div></div><p class="text-sm text-slate-600">“Uncle had breakfast and took his morning medicine.”</p></div>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl bg-care-50 p-4 text-sm text-care-900"><i data-lucide="shield-check" class="h-5 w-5 shrink-0 text-care-600"></i><span><strong>Quiet reassurance.</strong> No extra calls needed today.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reality" class="bg-slate-950 py-24 text-white">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-3xl"><p class="text-sm font-bold uppercase tracking-[.18em] text-teal-300">The cost of fragmentation</p><h2 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Why unstructured family care eventually breaks down</h2><p class="mt-5 text-lg leading-8 text-slate-300">The problem isn’t a lack of love. It’s that the right update rarely reaches the right person at the right time.</p></div>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <article class="reveal rounded-3xl border border-white/10 bg-white/[.06] p-7"><span class="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-amber-400/15 text-amber-300"><i data-lucide="pill"></i></span><h3 class="text-xl font-bold">The missed-routine spiral</h3><p class="mt-3 leading-7 text-slate-300">A delayed medicine or skipped meal becomes visible only after symptoms appear. Tiny gaps compound because nobody owns verification.</p></article>
+          <article class="reveal rounded-3xl border border-white/10 bg-white/[.06] p-7"><span class="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-rose-400/15 text-rose-300"><i data-lucide="phone-missed"></i></span><h3 class="text-xl font-bold">The 2:00 AM false alarm</h3><p class="mt-3 leading-7 text-slate-300">A silent phone triggers international calls, panicked relatives and frustration—when your parent was simply asleep.</p></article>
+          <article class="reveal rounded-3xl border border-white/10 bg-white/[.06] p-7"><span class="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-indigo-400/15 text-indigo-300"><i data-lucide="messages-square"></i></span><h3 class="text-xl font-bold">The informal-help black hole</h3><p class="mt-3 leading-7 text-slate-300">Maids, cooks and guards know what happened on the ground, but their updates disappear inside fragmented voice notes and calls.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal mx-auto max-w-3xl text-center"><p class="text-sm font-bold uppercase tracking-[.18em] text-care-600">Zero-install care loop</p><h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">Three quiet signals. One coordinated family.</h2><p class="mt-5 text-lg leading-8 text-slate-600">CareCircle works around your parents’ routine—not the other way around.</p></div>
+        <div class="mt-14 grid gap-6 lg:grid-cols-3">
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-7 shadow-card"><div class="flex items-center justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-care-50 text-care-600"><i data-lucide="sunrise"></i></span><span class="text-5xl font-extrabold text-slate-100">01</span></div><h3 class="mt-7 text-xl font-bold text-slate-950">Morning Anchor check-in</h3><p class="mt-3 leading-7 text-slate-600">A gentle greeting, devotional clip or one-tap WhatsApp response confirms routine without making anyone feel watched.</p><div class="mt-6 rounded-xl bg-slate-50 p-4 text-sm font-semibold text-slate-600">No new app. No complicated login.</div></article>
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-7 shadow-card"><div class="flex items-center justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-indigo-50 text-indigoCare"><i data-lucide="mic-2"></i></span><span class="text-5xl font-extrabold text-slate-100">02</span></div><h3 class="mt-7 text-xl font-bold text-slate-950">Medicine & Care Voice-Bridge</h3><p class="mt-3 leading-7 text-slate-600">Timed reminders reach the parent, while domestic helpers can confirm meals or medicines in Hindi, Marathi or Tamil using a short voice note.</p><div class="mt-6 rounded-xl bg-slate-50 p-4 text-sm font-semibold text-slate-600">Reminder + human confirmation, without a new app.</div></article>
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-7 shadow-card"><div class="flex items-center justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-rose-50 text-rose-600"><i data-lucide="route"></i></span><span class="text-5xl font-extrabold text-slate-100">03</span></div><h3 class="mt-7 text-xl font-bold text-slate-950">Staged local escalation</h3><p class="mt-3 leading-7 text-slate-600">A soft call first, then a trusted neighbour or guard, then the family—so verified action replaces immediate panic.</p><div class="mt-6 rounded-xl bg-slate-50 p-4 text-sm font-semibold text-slate-600">The right person, at the right moment.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="medicines" class="border-y border-slate-200 bg-gradient-to-br from-indigo-50/70 via-white to-care-50 py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-indigoCare">Medication routines</p>
+            <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">A reminder is useful. Knowing what happened next brings peace of mind.</h2>
+            <p class="mt-5 text-lg leading-8 text-slate-600">CareCircle supports family-configured medicine schedules through WhatsApp and voice calls, then helps capture a simple confirmation from the parent or an authorised caregiver.</p>
+            <div class="mt-7 flex items-start gap-3 rounded-2xl border border-indigo-200 bg-white p-5 text-sm leading-6 text-slate-600 shadow-card"><i data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0 text-indigoCare"></i><p>CareCircle coordinates reminders and confirmations. It does not prescribe medication, change dosage or provide clinical advice.</p></div>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-indigo-50 text-indigoCare"><i data-lucide="alarm-clock"></i></span><p class="mt-5 text-xs font-bold uppercase tracking-widest text-slate-400">1 · Remind</p><h3 class="mt-2 font-bold text-slate-950">Right time, familiar channel</h3><p class="mt-2 text-sm leading-6 text-slate-600">A WhatsApp prompt or automated voice call follows the family’s saved schedule.</p></article>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-care-50 text-care-600"><i data-lucide="badge-check"></i></span><p class="mt-5 text-xs font-bold uppercase tracking-widest text-slate-400">2 · Confirm</p><h3 class="mt-2 font-bold text-slate-950">One tap or voice note</h3><p class="mt-2 text-sm leading-6 text-slate-600">The parent or authorised helper confirms the routine without filling a complex form.</p></article>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-amber-50 text-amber-700"><i data-lucide="bell-ring"></i></span><p class="mt-5 text-xs font-bold uppercase tracking-widest text-slate-400">3 · Follow up</p><h3 class="mt-2 font-bold text-slate-950">Escalate only if unresolved</h3><p class="mt-2 text-sm leading-6 text-slate-600">A missed confirmation triggers a gentle retry, then alerts the chosen family contact.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" class="bg-slate-50 py-24">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8"><div class="reveal max-w-3xl"><p class="text-sm font-bold uppercase tracking-[.18em] text-care-600">Built on familiar behaviour</p><h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">Not another family group</h2><p class="mt-5 text-lg leading-8 text-slate-600">CareCircle uses WhatsApp as the channel, then adds the structure family care needs.</p></div>
+        <div class="reveal mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card">
+          <div class="grid grid-cols-[1.2fr_1fr_1fr] border-b border-slate-200 bg-slate-100 px-5 py-4 text-sm font-bold text-slate-700 sm:px-8"><span>What your family needs</span><span>Family group</span><span class="text-care-700">CareCircle</span></div>
+          <div id="comparisonRows"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="escalation" class="py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal grid items-end gap-8 lg:grid-cols-2"><div><p class="text-sm font-bold uppercase tracking-[.18em] text-care-600">Escalation with restraint</p><h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">Verification before alarm</h2></div><p class="text-lg leading-8 text-slate-600">Each step adds context before pulling more people in—reducing false panic while keeping a clear path to local action.</p></div>
+        <div class="mt-14 grid gap-4 lg:grid-cols-4">
+          <button class="step reveal rounded-3xl border-2 border-care-600 bg-care-50 p-6 text-left" data-step="0"><span class="text-xs font-bold uppercase tracking-widest text-care-600">8:00 AM</span><i data-lucide="message-circle" class="mt-5 h-7 w-7 text-care-600"></i><h3 class="mt-4 font-bold text-slate-950">Check-in window</h3><p class="mt-2 text-sm leading-6 text-slate-600">A gentle greeting opens the day.</p></button>
+          <button class="step reveal rounded-3xl border-2 border-slate-200 bg-white p-6 text-left" data-step="1"><span class="text-xs font-bold uppercase tracking-widest text-slate-400">If unanswered</span><i data-lucide="phone-call" class="mt-5 h-7 w-7 text-slate-500"></i><h3 class="mt-4 font-bold text-slate-950">Soft verification</h3><p class="mt-2 text-sm leading-6 text-slate-600">An automated voice call checks in.</p></button>
+          <button class="step reveal rounded-3xl border-2 border-slate-200 bg-white p-6 text-left" data-step="2"><span class="text-xs font-bold uppercase tracking-widest text-slate-400">Still unresolved</span><i data-lucide="door-open" class="mt-5 h-7 w-7 text-slate-500"></i><h3 class="mt-4 font-bold text-slate-950">Local door check</h3><p class="mt-2 text-sm leading-6 text-slate-600">A trusted neighbour or guard is pinged.</p></button>
+          <button class="step reveal rounded-3xl border-2 border-slate-200 bg-white p-6 text-left" data-step="3"><span class="text-xs font-bold uppercase tracking-widest text-slate-400">Anomaly verified</span><i data-lucide="users" class="mt-5 h-7 w-7 text-slate-500"></i><h3 class="mt-4 font-bold text-slate-950">Family loop</h3><p class="mt-2 text-sm leading-6 text-slate-600">The family coordinates next actions.</p></button>
+        </div>
+        <div id="stepDetail" class="mt-5 rounded-2xl border border-care-600/20 bg-care-50 p-5 text-sm leading-6 text-care-900"><strong>Step 1:</strong> The parent receives a familiar, low-friction WhatsApp greeting during their chosen morning window.</div>
+        <div class="mt-6 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900"><i data-lucide="triangle-alert" class="mt-0.5 h-5 w-5 shrink-0"></i><p><strong>Important:</strong> CareCircle is a family coordination protocol, not an emergency medical service. We coordinate people, not ambulances. For an immediate emergency, call 112 or 108.</p></div>
+      </div>
+    </section>
+
+    <section id="pricing" class="bg-care-900 py-20 text-white">
+      <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-5 lg:flex-row lg:items-center lg:px-8"><div class="max-w-2xl"><p class="text-sm font-bold uppercase tracking-[.18em] text-teal-300">Closed beta pricing</p><h2 class="mt-3 text-3xl font-extrabold">Free for the first 50 families</h2><p class="mt-4 leading-7 text-teal-50/80">Help us shape check-in timing, helper workflows and local escalation before wider launch. No payment details required.</p></div><a href="#waitlist" class="rounded-xl bg-white px-6 py-4 font-bold text-care-900 shadow-lg transition hover:-translate-y-0.5">Request your beta place</a></div>
+    </section>
+
+    <section id="waitlist" class="relative overflow-hidden py-24">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-care-50 via-white to-indigo-50"></div>
+      <div class="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+        <div class="reveal"><p class="text-sm font-bold uppercase tracking-[.18em] text-care-600">Pune & Bengaluru</p><h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">Join the 50-family beta</h2><p class="mt-5 text-lg leading-8 text-slate-600">If you coordinate care from another city or country, your experience can help us build a calmer, more reliable care loop.</p><ul class="mt-8 space-y-4 text-slate-700"><li class="flex gap-3"><i data-lucide="check" class="mt-1 h-5 w-5 shrink-0 text-care-600"></i>Free throughout the early beta</li><li class="flex gap-3"><i data-lucide="check" class="mt-1 h-5 w-5 shrink-0 text-care-600"></i>Designed around parental consent and control</li><li class="flex gap-3"><i data-lucide="check" class="mt-1 h-5 w-5 shrink-0 text-care-600"></i>Direct input into product decisions</li></ul></div>
+        <form id="waitlistForm" class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="sm:col-span-2"><span class="mb-2 block text-sm font-bold text-slate-700">Your name</span><input required name="name" autocomplete="name" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base transition focus:border-care-600 focus:ring-2 focus:ring-teal-100" placeholder="Priya Sharma"></label>
+            <label class="sm:col-span-2"><span class="mb-2 block text-sm font-bold text-slate-700">WhatsApp phone number</span><input required name="phone" type="tel" autocomplete="tel" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base transition focus:border-care-600 focus:ring-2 focus:ring-teal-100" placeholder="+91 98765 43210"></label>
+            <label><span class="mb-2 block text-sm font-bold text-slate-700">Where do you live?</span><input required name="location" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base transition focus:border-care-600 focus:ring-2 focus:ring-teal-100" placeholder="Singapore"></label>
+            <label><span class="mb-2 block text-sm font-bold text-slate-700">Where do your parents live?</span><input required name="parentsLocation" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-base transition focus:border-care-600 focus:ring-2 focus:ring-teal-100" placeholder="Pune"></label>
+          </div>
+          <label class="mt-5 flex items-start gap-3 text-sm leading-6 text-slate-600"><input required type="checkbox" class="mt-1 h-4 w-4 rounded border-slate-300 text-care-600 focus:ring-care-600"><span>I agree to be contacted about the CareCircle beta. I understand this form does not enrol my parent or share their health data.</span></label>
+          <button type="submit" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-care-600 px-6 py-4 font-bold text-white shadow-soft transition hover:bg-care-700">Request Early Access <i data-lucide="arrow-right" class="h-4 w-4"></i></button>
+          <p class="mt-4 text-center text-xs leading-5 text-slate-500">Free for the early beta cohort. We respect parental privacy.</p>
+          <div id="formSuccess" class="mt-5 hidden rounded-xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-800" role="status">Thank you—your beta request has been recorded for this preview. We’ll use your details only for CareCircle early access.</div>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="border-t border-slate-200 py-24">
+      <div class="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[.75fr_1.25fr] lg:px-8"><div class="reveal"><p class="text-sm font-bold uppercase tracking-[.18em] text-care-600">FAQ</p><h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950">Questions families ask first</h2><p class="mt-5 leading-7 text-slate-600">Clear boundaries are part of trustworthy care.</p></div><div id="faqList" class="reveal space-y-3"></div></div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-7xl px-5 py-12 lg:px-8"><div class="flex flex-col justify-between gap-6 sm:flex-row"><div><div class="flex items-center gap-2 text-lg font-extrabold text-slate-950"><i data-lucide="heart-pulse" class="h-5 w-5 text-care-600"></i>CareCircle</div><p class="mt-3 max-w-xl text-sm leading-6 text-slate-500">CareCircle facilitates family communication and coordination. It is not a medical provider, emergency dispatch service or security agency, and cannot guarantee third-party response. Product claims about compliance describe the intended consent architecture and require legal validation before commercial launch.</p></div><div class="flex flex-wrap gap-5 text-sm font-semibold text-slate-600"><a href="#faq" class="hover:text-care-600">Privacy Policy</a><a href="#faq" class="hover:text-care-600">Consent Architecture</a><a href="mailto:hello@carecircle.example" class="hover:text-care-600">Contact</a></div></div><div class="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500">© 2026 CareCircle. Built with dignity for families living apart.</div></div>
+  </footer>
+
+  <script>
+    const comparisons = [
+      ['Routine & medicine updates','Unstructured chatter','Timed reminders + confirmation'],
+      ['Responsibility','No clear ownership','Assigned and verified'],
+      ['Missed response','Panic-driven calls','Staged local escalation'],
+      ['Helper access','Text-heavy and fragmented','Regional voice updates'],
+      ['Privacy','Group-wide visibility','Consent-based access']
+    ];
+    document.querySelector('#comparisonRows').innerHTML = comparisons.map(([a,b,c]) => `<div class="grid grid-cols-[1.2fr_1fr_1fr] items-center border-b border-slate-100 px-5 py-5 text-sm last:border-0 sm:px-8"><strong class="pr-3 text-slate-800">${a}</strong><span class="flex items-start gap-2 pr-3 text-slate-500"><i data-lucide="minus" class="mt-0.5 h-4 w-4 shrink-0 text-slate-400"></i>${b}</span><span class="flex items-start gap-2 font-semibold text-care-700"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0"></i>${c}</span></div>`).join('');
+    const faqs = [
+      ['Do my parents need to install an app?','No. The beta is designed around WhatsApp and automated voice calls so parents and local helpers can use familiar channels.'],
+      ['Is CareCircle an emergency service?','No. CareCircle helps families follow a pre-agreed communication and local-verification protocol. For an immediate emergency, contact 112 or 108 directly.'],
+      ['Can my child enrol me without permission?','The intended product requires the parent’s clear, purpose-specific consent before check-ins or information sharing begin. Consent can be withdrawn.'],
+      ['Which languages will the beta support?','The pilot will focus on English, Hindi and Marathi first, with voice workflows tested before additional languages are introduced.'],
+      ['What happens to the form data?','This demo keeps the experience local and does not send your submission to a live backend. A production pilot would require a published privacy notice and secure data handling.']
+    ];
+    document.querySelector('#faqList').innerHTML = faqs.map((f,i) => `<div class="overflow-hidden rounded-2xl border border-slate-200 bg-white"><button class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-slate-900" aria-expanded="${i===0}"><span>${f[0]}</span><i data-lucide="chevron-down" class="h-5 w-5 shrink-0 transition"></i></button><div class="faq-answer ${i===0?'':'hidden'} px-5 pb-5 leading-7 text-slate-600">${f[1]}</div></div>`).join('');
+    const menuBtn = document.querySelector('#menuBtn'), mobileMenu = document.querySelector('#mobileMenu');
+    menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('hidden');menuBtn.setAttribute('aria-expanded',String(!open));});
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.add('hidden')));
+    document.querySelectorAll('.faq-btn').forEach(btn=>btn.addEventListener('click',()=>{const answer=btn.nextElementSibling, expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));answer.classList.toggle('hidden');btn.querySelector('svg').classList.toggle('rotate-180');}));
+    const details = ['<strong>Step 1:</strong> The parent receives a familiar, low-friction WhatsApp greeting during their chosen morning window.','<strong>Step 2:</strong> If there is no response, an automated voice call provides a second, accessible way to confirm routine.','<strong>Step 3:</strong> If the situation remains unresolved, a pre-authorised neighbour or society guard is asked to verify in person.','<strong>Step 4:</strong> The family is brought together with the context already gathered, so they can coordinate an informed next action.'];
+    document.querySelectorAll('.step').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.step').forEach(x=>{x.classList.remove('border-care-600','bg-care-50');x.classList.add('border-slate-200','bg-white')});btn.classList.add('border-care-600','bg-care-50');btn.classList.remove('border-slate-200','bg-white');document.querySelector('#stepDetail').innerHTML=details[Number(btn.dataset.step)];}));
+    document.querySelector('#waitlistForm').addEventListener('submit',e=>{e.preventDefault();document.querySelector('#formSuccess').classList.remove('hidden');e.target.querySelector('button[type="submit"]').textContent='Request received';e.target.querySelector('button[type="submit"]').disabled=true;});
+    const observer = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    lucide.createIcons();
+  </script>
+</body>
+</html>
